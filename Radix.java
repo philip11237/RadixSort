@@ -47,6 +47,24 @@ public class Radix{
     }
   }
   public static void radixSort(SortableLinkedList data){
+    radixSortSimple(data);
+    SortableLinkedList buckets[]=new SortableLinkedList[2];
+    for (int b=0;b<buckets.length;b++){
+      buckets[b]=new SortableLinkedList();
 
+    }
+
+    while (data.size()>0){
+      int x=data.remove(0);
+     if (x<0){
+       buckets[0].add(0,x);
+     }
+     else {
+       buckets[1].add(x);
+     }
+
+    }
+
+    merge(data,buckets);
   }
 }
