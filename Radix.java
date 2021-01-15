@@ -26,15 +26,27 @@ public class Radix{
   public static void radixSortSimple(SortableLinkedList data){
     int counter=0;
     for (int i=0;i< data.size();i++){
-      if (counter<data[i]){
-        counter=data[i];
+      if (counter<data.get(i)){
+        counter=data.get(i);
 
       }
     }
     int i =0;
-    while (i<length(counter)){
-       SortableLinkedList buckets[]=new SortableLinkedList[10];
-       int x=nth()
+    SortableLinkedList buckets[]=new SortableLinkedList[10];
+    for (int b=0;b<buckets.length;b++){
+      buckets[b]=new SortableLinkedList();
     }
+    while (i<length(counter)){
+       while (data.size()>0){
+         int x=data.remove(0);
+        int index= nth(x,i);
+        buckets[index].add(x);
+       }
+       merge(data,buckets);
+          i++;
+    }
+  }
+  public static void radixSort(SortableLinkedList data){
+
   }
 }
