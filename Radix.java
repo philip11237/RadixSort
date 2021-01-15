@@ -1,5 +1,5 @@
 public class Radix{
-public static int nth(int n, int col){
+  public static int nth(int n, int col){
     if (n<0){
       n=n*-1;
     }
@@ -14,13 +14,27 @@ public static int nth(int n, int col){
       return 1;
     }
     while (n>0){
-    n= n/10;
+      n= n/10;
       counter++;
     }return counter;
   }
-  public static void merge(MyLinkedList original,MyLinkedList[]buckets){
+  public static void merge( SortableLinkedList original, SortableLinkedList[]buckets){
     for (int i =0;i<buckets.length;i++){
-        original.extend(buckets[i]);
+      original.extend(buckets[i]);
+    }
+  }
+  public static void radixSortSimple(SortableLinkedList data){
+    int counter=0;
+    for (int i=0;i< data.size();i++){
+      if (counter<data[i]){
+        counter=data[i];
+
+      }
+    }
+    int i =0;
+    while (i<length(counter)){
+       SortableLinkedList buckets[]=new SortableLinkedList[10];
+       int x=nth()
     }
   }
 }
